@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INGRES Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2dfdb 100%);
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            min-width: 320px;
+        }
+
+        .title {
+            color: #00796b;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #555;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 6px;
+            border: 1px solid #b2dfdb;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #00796b;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-button:hover {
+            background: #00695c;
+        }
+
+        .submit-button:active {
+            background: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form-container" id="loginForm">
+            <h2 class="title">INGRES AI Chatbot Assistance</h2>
+            <p class="subtitle">India Groundwater Resources Estimation System</p>
+            
+            <div class="form-group">
+                <label for="username" class="form-label">Username or Email</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    class="form-input"
+                    autofocus 
+                    required
+                />
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-input"
+                    required
+                />
+            </div>
+            
+            <div id="errorMessage" class="error-message"></div>
+            
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (username === '' || password === '') {
+                errorMessage.textContent = 'Please enter both username and password.';
+                errorMessage.classList.add('show');
+            } else {
+                errorMessage.classList.remove('show');
+                
+                // Show success message briefly then redirect
+                const button = document.querySelector('.submit-button');
+                button.textContent = 'Logging in...';
+                button.style.background = '#4caf50';
+                button.disabled = true;
+                
+                setTimeout(function() {
+                    // Simple redirect - change 'chatbot.html' to your chatbot page name
+                    <a href="C:\INGRES-Prototype\frontend\index.html"></a>;
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

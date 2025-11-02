@@ -1,0 +1,106 @@
+import React, { useState } from 'react';
+
+export default function IngresLoginPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // TODO: Replace with actual authentication logic
+    if (username === '' || password === '') {
+      setError('Please enter both username and password.');
+    } else {
+      setError('');
+      // Redirect or perform login
+      alert('Login successful! (Demo)');
+    }
+  };
+
+  return (
+    <div style={{
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      background: "linear-gradient(135deg, #e0f7fa 0%, #b2dfdb 100%)"
+    }}>
+      <form onSubmit={handleSubmit} style={{
+        background: "#fff",
+        padding: "2rem",
+        borderRadius: "12px",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+        minWidth: "320px"
+      }}>
+        <h2 style={{ color: "#00796b", textAlign: "center", marginBottom: "1.5rem" }}>
+          INGRES AI Chatbot Assistance
+        </h2>
+        <p style={{ color: "#555", textAlign: "center", marginBottom: "2rem" }}>
+          India Groundwater Resources Estimation System
+        </p>
+        <div style={{ marginBottom: "1rem" }}>
+          <label htmlFor="username" style={{ display: "block", marginBottom: ".5rem" }}>
+            Username or Email
+          </label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            style={{
+              width: "100%",
+              padding: ".5rem",
+              borderRadius: "6px",
+              border: "1px solid #b2dfdb"
+            }}
+            autoFocus
+            required
+          />
+        </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <label htmlFor="password" style={{ display: "block", marginBottom: ".5rem" }}>
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            style={{
+              width: "100%",
+              padding: ".5rem",
+              borderRadius: "6px",
+              border: "1px solid #b2dfdb"
+            }}
+            required
+          />
+        </div>
+        {error && (
+          <div style={{
+            color: "#d32f2f",
+            marginBottom: "1rem",
+            fontSize: ".95rem"
+          }}>
+            {error}
+          </div>
+        )}
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: ".75rem",
+            background: "#00796b",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            fontWeight: "bold",
+            letterSpacing: "1px",
+            cursor: "pointer"
+          }}
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  );
+}

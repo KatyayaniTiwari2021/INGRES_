@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INGRES ChatBot - Groundwater Resource Assistant</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <div class="container">
+        
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">💧</span>
+                <div>
+                    <h1>INGRES ChatBot</h1>
+                    <p>India Groundwater Resource Estimation System</p>
+                </div>
+            </div>
+            <div class="header-info">
+                <span class="status-indicator" id="connectionStatus">
+                    <span class="status-dot"></span>
+                    <span>Connected</span>
+                </span>
+            </div>
+        </header>
+
+      
+        <div class="chat-container">
+        
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>Welcome to INGRES ChatBot! 👋</p>
+                            <p>I'm your virtual assistant for groundwater resource information across India.</p>
+                            <p>You can ask me about:</p>
+                            <ul>
+                                <li>Groundwater status of any state, district, or block</li>
+                                <li>Critical and over-exploited areas</li>
+                                <li>Water levels and recharge rates</li>
+                                <li>Historical trends and data</li>
+                            </ul>
+                            <p>Try asking: <em>"What is the groundwater status of Delhi?"</em></p>
+                        </div>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-btn" onclick="sendQuickQuery('Show me critical areas')">
+                    🚨 Critical Areas
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuery('Which areas are safe?')">
+                    ✅ Safe Areas
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuery('Show groundwater status of Delhi')">
+                    📍 Delhi Status
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuery('What is the water level trend?')">
+                    📊 Trends
+                </button>
+                <button class="quick-btn" onclick="sendQuickQuery('Help')">
+                    ❓ Help
+                </button>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Ask about groundwater resources..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button class="send-button" onclick="sendMessage()">
+                    <span>Send</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Ministry of Jal Shakti | Central Ground Water Board (CGWB) | MVP Version</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
